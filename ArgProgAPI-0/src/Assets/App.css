@@ -1,0 +1,32 @@
+body {
+  background-color: #95dae3;
+  text-align: center;
+  margin: 0.5vh 0.5vw;
+  padding: 0.5vh 0.5vw;
+}
+
+.dia {
+  max-height: 10vh;
+  /* El máximo del 10% de la altura de la pantalla */
+  min-height: 10vh;
+  /* El mínimo del 10% de la altura de la pantalla */
+  white-space: nowrap;
+  /* Evita el salto de línea */
+  overflow: hidden;
+  /* Oculta cualquier contenido que desborde */
+  text-overflow: ellipsis;
+  /* Muestra puntos suspensivos (...) si el contenido desborda */
+  overflow: auto;
+}
+
+.clima {
+  flex: 1; /* Ocupa el 50% del espacio disponible */
+  padding: 40px; /* Añade espacio de relleno si es necesario */
+}
+
+.transito {
+  flex: 1; /* Ocupa el 50% del espacio disponible */
+  padding: 10px; /* Añade espacio de relleno si es necesario */
+  border: solid red;
+}
+
