@@ -4,7 +4,7 @@ import styled from 'styled-components'; // styled components de este componente
 /* import Aire from './Aire'; */ //modulo que de momento no utilizo
 /* import Luz from './Luz' */ //modulo que de momento no utilizo
 
-import Tarjeta from '../Tarjeta'; 
+import Tarjeta from '../Tarjeta'; // Mi módulo de tarjetas reversibles
 
 /* imagenes */
 import VelocidadVientoImg from '../../Assets/iconos/wind.svg'
@@ -20,11 +20,10 @@ import HumedadImg from '../../Assets/iconos/humidity.svg'
 // ---- //
 import ClimaAPI from './climaAPI.json' //Datos de la API estáticos
 
-
 const ContenedorHighlights = styled.div`
 display: grid;
-grid-template-columns: repeat(3, 1fr); /* Divide en 3 columnas */
-grid-template-rows: repeat(1, 1fr); /* Divide en 2 filas */
+grid-template-columns: repeat(5, 1fr); /* Divide en 3 columnas */
+grid-template-rows: repeat(2, 1fr); /* Divide en 2 filas */
 gap: 5px; /* Espacio entre las tarjetas */
 `;
 
@@ -54,7 +53,17 @@ const DireccionViento = () => {
   return dato
 }
 
-
+/* 
+Cómo medir la dirección de acuerdo a los grados que presenta la API
+0 grados: Norte
+45 grados: Noreste
+90 grados: Este
+135 grados: Sureste
+180 grados: Sur
+225 grados: Suroeste
+270 grados: Oeste
+315 grados: Noroeste
+360 grados (o 0 grados nuevamente): Norte */
 
 const VelocidadViento = ClimaAPI.current_weather.windspeed + " " + ClimaAPI.daily_units.windspeed_10m_max
 const VelocidadVientoMax = ClimaAPI.daily_units.windspeed_10m_max + " " + ClimaAPI.daily_units.windspeed_10m_max
@@ -92,7 +101,14 @@ function Highlights() {
         contenidoDorso={""}
       />
 
-    
+      <Tarjeta
+        imagenFrente={VelocidadVientoImg}
+        tituloFrente="Velocidad del Viento Actual"
+        contenidoFrente=""
+        imagenDorso={VelocidadVientoImg}
+        tituloDorso={VelocidadViento}
+        contenidoDorso=""
+      />
       {/* FIN VIENTO */}
       {/* INICIO AIRE */}
 

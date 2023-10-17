@@ -40,30 +40,7 @@ const ContendorGraficos = styled.div`
 function Temperatura() {
   // Datos de ejemplo para el gráfico
   const datosTemperaturaHoy = [
-    { hora: String(ClimaAPI.hourly.time[0] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[0]},
-    { hora: String(ClimaAPI.hourly.time[1] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[1]},
-    { hora: String(ClimaAPI.hourly.time[2] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[2]},
-    { hora: String(ClimaAPI.hourly.time[3] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[3]},
-    { hora: String(ClimaAPI.hourly.time[4] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[4]},
-    { hora: String(ClimaAPI.hourly.time[5] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[5]},
-    { hora: String(ClimaAPI.hourly.time[6] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[6]},
-    { hora: String(ClimaAPI.hourly.time[7] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[7]},
-    { hora: String(ClimaAPI.hourly.time[8] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[8]},
-    { hora: String(ClimaAPI.hourly.time[9] ).slice(-5), temperatura: ClimaAPI.hourly.temperature_2m[9]},
-    { hora: String(ClimaAPI.hourly.time[10]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[10]},
-    { hora: String(ClimaAPI.hourly.time[11]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[11]},
-    { hora: String(ClimaAPI.hourly.time[12]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[12]},
-    { hora: String(ClimaAPI.hourly.time[13]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[13]},
-    { hora: String(ClimaAPI.hourly.time[14]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[14]},
-    { hora: String(ClimaAPI.hourly.time[15]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[15]},
-    { hora: String(ClimaAPI.hourly.time[16]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[16]},
-    { hora: String(ClimaAPI.hourly.time[17]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[17]},
-    { hora: String(ClimaAPI.hourly.time[18]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[18]},
-    { hora: String(ClimaAPI.hourly.time[19]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[19]},
-    { hora: String(ClimaAPI.hourly.time[20]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[20]},
-    { hora: String(ClimaAPI.hourly.time[21]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[21]},
-    { hora: String(ClimaAPI.hourly.time[22]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[22]},
-    { hora: String(ClimaAPI.hourly.time[23]).slice(-5) , temperatura: ClimaAPI.hourly.temperature_2m[23]},
+   
   ];
 
   /// Función para calcular el color de fondo en función de la temperatura
@@ -102,7 +79,7 @@ const CaF= ((ClimaAPI.current_weather.temperature * 9/5)+32)
 
 
   return (
-    <ContenedorTemp>
+    
       
       <SectorArriba>
 
@@ -135,6 +112,8 @@ const CaF= ((ClimaAPI.current_weather.temperature * 9/5)+32)
         <Tarjeta
         imagenFrente={TemperaturaMinImg}
           tituloFrente={tempMin}
+          imagenDorso={TemperaturaMinImg}
+          tituloDorso={contTempMin}
           contenidoFrente=""
           imagenDorso={TemperaturaMinImg}
           tituloDorso={contTempMin}
@@ -144,7 +123,7 @@ const CaF= ((ClimaAPI.current_weather.temperature * 9/5)+32)
       </SectorArriba>
             
       
-    </ContenedorTemp>
+    
   );
 }
 

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TarjetaContainer = styled.div`
-  width: 70%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,8 +26,10 @@ const Frente = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  
-  
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 
   background-color: #f6fff8; /* Fondo del lado frontal */
 
@@ -36,9 +38,11 @@ const Frente = styled.div`
     width: 55%;
   }
 
- 
+  
 
-
+  ${TarjetaContainer}:hover & {
+    
+  }
 `;
 
 const Dorso = styled.div`
@@ -52,7 +56,11 @@ const Dorso = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transition: transform 0.5s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+
   background-color: #eaf4f4; /* Fondo del lado trasero */
 
   & img {
@@ -60,7 +68,7 @@ const Dorso = styled.div`
     width: 55%;
   }
 
-
+  
 
   .contenido {
     display: flex;
@@ -69,7 +77,7 @@ const Dorso = styled.div`
   }
 `;
 
-const Tarjeta = ({
+const TarjetaReversible = ({
   tituloFrente,
   contenidoFrente,
   imagenFrente,
@@ -84,15 +92,21 @@ const Tarjeta = ({
         
         <p>{tituloFrente}</p>
         <p>{contenidoFrente}</p>
-       
+        <img src={imagenDorso} alt="Dorso" />
         <p>{tituloDorso}</p>
         <div className="contenido">
           <p>{contenidoDorso}</p>
         </div>
       </Frente>
-     
+      <Dorso colorFondoContenido={colorFondoContenido}>
+        <img src={imagenDorso} alt="Dorso" />
+        <p>{tituloDorso}</p>
+        <div className="contenido">
+          <p>{contenidoDorso}</p>
+        </div>
+      </Dorso>
     </TarjetaContainer>
   );
 };
 
-export default Tarjeta;
+export default TarjetaReversible;

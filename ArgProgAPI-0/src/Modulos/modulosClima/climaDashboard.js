@@ -23,15 +23,14 @@ const SeccionHighligts = styled.div`
 function ClimaDashboard() {
   return (
     <ContenedorClima>
-     
-      <SeccionHighligts>
-        <h2>Información</h2>
-        <Highlights />
-        </SeccionHighligts>
-        <SeccionTemperatura>
+      <SeccionTemperatura>
         <h2>Temperatura</h2>
         <Temperatura />
       </SeccionTemperatura>
+      <SeccionHighligts>
+        <h2>Información Destacada</h2>
+        <Highlights />
+      </SeccionHighligts>
     </ContenedorClima>
   );
 }

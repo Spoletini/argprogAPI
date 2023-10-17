@@ -1,5 +1,5 @@
 body {
-  background-color: #95dae3;
+  background-color: #EAF4F4;
   text-align: center;
   margin: 0.5vh 0.5vw;
   padding: 0.5vh 0.5vw;
@@ -21,7 +21,7 @@ body {
 
 .clima {
   flex: 1; /* Ocupa el 50% del espacio disponible */
-  padding: 40px; /* Añade espacio de relleno si es necesario */
+  padding: 10px; /* Añade espacio de relleno si es necesario */
 }
 
 .transito {

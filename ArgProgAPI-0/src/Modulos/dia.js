@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tarjeta from './Tarjeta';
+
 import TarjetaEstatica from './TarjetaEstatica'
 import ClimaAPI from './modulosClima/climaAPI.json'
 
@@ -19,18 +19,15 @@ function Dia() {
   return (
 
     <DiaContainer>
-
-<TarjetaEstatica
-        titulo={"Provincia: Santa Fe"}
-        contenido={"Ciudad: Rosario"}
-      />
       <TarjetaEstatica
         titulo={"Fecha: " + Fecha}
         contenido={"Hora: " + Hora}
-        
       />
 
-     
+      <TarjetaEstatica
+        titulo={"Provincia: Santa Fe"}
+        contenido={"Ciudad: Rosario"}
+      />
     </DiaContainer>
   );
 }
